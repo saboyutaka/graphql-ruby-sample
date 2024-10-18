@@ -11,6 +11,8 @@ gem "importmap-rails"
 gem "turbo-rails"
 gem "stimulus-rails"
 
+gem "graphql"
+
 gem "bootsnap", require: false
 
 group :development, :test do
@@ -20,3 +22,4 @@ end
 group :development do
   gem "web-console"
 end
+gem "graphiql-rails", group: :development
