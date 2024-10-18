@@ -10,7 +10,6 @@ gem "sprockets-rails"
 gem "importmap-rails"
 gem "turbo-rails"
 gem "stimulus-rails"
-gem "jbuilder"
 
 gem "bootsnap", require: false
 
