@@ -27,5 +27,10 @@ module Types
     def test_field
       "Hello World!"
     end
+
+    field :books, [Types::BookType], null: false, description: "Returns a list of books"
+    def books
+      Book.all
+    end
   end
 end
