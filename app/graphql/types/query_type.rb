@@ -6,7 +6,8 @@ module Types
     field :books, [Types::BookType], null: false, description: "Returns a list of books"
 
     def books_connection
-      Book.all
+      books = Book.all
+      Connections::BookConnection.new(books)
     end
 
     def books
