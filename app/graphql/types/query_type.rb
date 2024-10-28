@@ -2,7 +2,12 @@
 
 module Types
   class QueryType < Types::BaseObject
+    field :books_connection, Types::BookType.connection_type, null: false, description: "Returns a list of books with pagination"
     field :books, [Types::BookType], null: false, description: "Returns a list of books"
+
+    def books_connection
+      Book.all
+    end
 
     def books
       Book.all
