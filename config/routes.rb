@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql" if Rails.env.development?
+  if Rails.env.development?
+    mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
+    get '/graphql/voyager', to: "graphql#voyager"
+  end
   post "/graphql", to: "graphql#execute"
 
   resources :books
