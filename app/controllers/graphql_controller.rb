@@ -19,6 +19,10 @@ class GraphqlController < ApplicationController
     render layout: false
   end
 
+  def schema
+    render plain: GraphqlAppSchema.to_definition
+  end
+
   private
 
   # Handle variables in form data, JSON body, or a blank value
